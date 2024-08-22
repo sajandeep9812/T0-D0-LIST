@@ -16,7 +16,7 @@ This is a Python-based To-Do List application built using the Tkinter library. T
 - <b>Export Tasks as PDF: </b>  Save the current task list as a PDF file.  <br>
 
 <b> Requirements: </b> <br>
-- Python 3.x
+- [Python 3.x](https://www.python.org/downloads/)
 - Tkinter (comes pre-installed with Python) <br>
 - ReportLab (for PDF generation) <br>
 
