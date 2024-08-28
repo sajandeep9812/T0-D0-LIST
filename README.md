@@ -14,6 +14,7 @@ This is a Python-based To-Do List application built using the Tkinter library. T
 - <b>Multiple Selection: </b>  Select multiple tasks simultaneously for deletion or completion.  <br>
 - <b>Save Tasks to JSON: </b>  Tasks are automatically saved to a JSON file for persistence across sessions.  <br>
 - <b>Export Tasks as PDF: </b>  Save the current task list as a PDF file.  <br>
+- <b>Theme Toggle: </b> Switch between dark and light themes using a theme toggle button.
 
 <b> Requirements: </b> <br>
 - [Python 3.x](https://www.python.org/downloads/)
@@ -28,3 +29,7 @@ This is a Python-based To-Do List application built using the Tkinter library. T
 - <b>tasks.json:</b> A JSON file where tasks are saved. This file is automatically created and updated as you use the application.<br>
 - <b>assets/:</b> Directory containing images and other assets used in the GUI.<br>
 
+# Screenshots:
+<img width="722" alt="Screenshot 2024-08-28 at 10 28 50 AM" src="https://github.com/user-attachments/assets/bd205603-e3a0-4541-b91f-fe8e96f1adc3">
+<img width="587" alt="Screenshot 2024-08-28 at 10 26 44 AM" src="https://github.com/user-attachments/assets/ac139e29-9d64-43a4-9988-f6cfa48657c0">
+<img width="580" alt="Screenshot 2024-08-28 at 10 27 30 AM" src="https://github.com/user-attachments/assets/f615119f-5755-4cfc-92c3-abe5713e80ce">
