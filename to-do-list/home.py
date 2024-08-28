@@ -13,6 +13,35 @@ TASKS_FILE = OUTPUT_PATH / "tasks.json"
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+current_theme = "light"
+
+def toggle_theme():
+    global current_theme
+    if current_theme == "light":
+        current_theme = "dark"
+        window.configure(bg="#2E2E2E")
+        canvas.configure(bg="#2E2E2E")
+        entry.configure(bg="#333333", fg="#FFFFFF")
+        task_listbox.configure(bg="#333333", fg="#FFFFFF", selectbackground="#555555", selectforeground="#FFFFFF")
+        add_button.configure(bg="#5E5E5E", fg="#000000")
+        delete_button.configure(bg="#E57373", fg="#000000")
+        complete_button.configure(bg="#81C784", fg="#000000")
+        edit_button.configure(bg="#FFEB3B", fg="#000000")
+        save_pdf_button.configure(bg="#FF9800", fg="#000000")
+        toggle_button.configure(bg="#444444", fg="#000000", text="Light Theme")
+    else:
+        current_theme = "light"
+        window.configure(bg="#FFFFFF")
+        canvas.configure(bg="#FFFFFF")
+        entry.configure(bg="#F4F4F4", fg="#000716")
+        task_listbox.configure(bg="#F4F4F4", fg="#000716", selectbackground="#D3D3D3", selectforeground="#000000")
+        add_button.configure(bg="#6D83F2", fg="#000000")
+        delete_button.configure(bg="#F26D6D", fg="#000000")
+        complete_button.configure(bg="#6DF26D", fg="#000000")
+        edit_button.configure(bg="#FFD700", fg="#000000")
+        save_pdf_button.configure(bg="#FFA500", fg="#000000")
+        toggle_button.configure(bg="#DDDDDD", fg="#000000", text="Dark Theme")
+
 def add_task():
     task = entry.get()
     if task:
@@ -31,11 +60,9 @@ def mark_task_complete():
     for index in selected_task_indices:
         current_task = task_listbox.get(index)
         if current_task.startswith("✔️ "):
-            # Uncheck the task
             task_listbox.delete(index)
             task_listbox.insert(index, current_task[2:])  # Remove "✔️ " from the task
         else:
-            # Check the task
             task_listbox.delete(index)
             task_listbox.insert(index, f"✔️ {current_task}")
     save_tasks()
@@ -187,6 +214,19 @@ save_pdf_button = Button(
     fg="#000000"
 )
 save_pdf_button.place(x=470, y=60, width=100, height=40)
+
+# Button to toggle theme
+toggle_button = Button(
+    window,
+    text="Dark Theme",
+    borderwidth=0,
+    highlightthickness=0,
+    command=toggle_theme,
+    relief="flat",
+    bg="#DDDDDD",
+    fg="#000000"
+)
+toggle_button.place(x=50, y=60, width=100, height=40)
 
 # Load tasks from JSON file when the app starts
 load_tasks()
